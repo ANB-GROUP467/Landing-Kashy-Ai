@@ -1,0 +1,6 @@
+{
+  "name": "Kashy",
+  "description": "AI-powered, Gamified Payment Revolution. Trade Smarter, Earn More, And Elevate Your Game with a mobile-first navigation and flexible grid system.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
