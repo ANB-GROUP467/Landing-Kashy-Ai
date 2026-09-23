@@ -290,9 +290,9 @@ export default function ClimbRanksTiers({
         <div className={styles.coinGlow} aria-hidden="true" />
         <button
           type="button"
+          disabled
           className={styles.coin}
           aria-label="Explore Frontline benefits"
-          onClick={() => setSelectedTier(allTiers[0])}
         >
           <video
             src="https://kashy.ai/videos/animatedKSYCoinNew-alpha.webm"
@@ -322,12 +322,9 @@ export default function ClimbRanksTiers({
         {displayedTiers.map((tier) => (
           <button
             type="button"
+            disabled
             key={tier.id}
             className={cards.card}
-            onClick={() => {
-              sfx.playClick();
-              setSelectedTier(tier);
-            }}
             aria-label={`Explore ${tier.tag.replace("// ", "")} benefits`}
           >
             <div className={cards.cardHeading}>
@@ -358,8 +355,8 @@ export default function ClimbRanksTiers({
       <div className={styles.progression}>
         <button
           type="button"
+          disabled
           className={styles.mascot}
-          onClick={() => setSelectedTier(allTiers[0])}
           aria-label="Explore the Kashy ranks"
         >
           <img
@@ -426,21 +423,14 @@ export default function ClimbRanksTiers({
           {liferShowcaseCards.map((card) => (
             <button
               type="button"
+              disabled
               key={card.id}
               className={`${cards.card} ${tierStyles.liferCard}`}
-              onClick={() => {
-                sfx.playClick();
-                setSelectedLiferCard(card);
-              }}
               aria-label={`Explore LIFER: ${card.title}`}
             >
               <div className={tierStyles.liferHeading}>
-                <span className="block">
-                  / / LIFER
-                </span>
-                <h3 className="m-0">
-                  {card.title}
-                </h3>
+                <span className="block">/ / LIFER</span>
+                <h3 className="m-0">{card.title}</h3>
               </div>
               <ul className={tierStyles.liferBullets}>
                 {card.bullets.map((bullet) => (
@@ -564,11 +554,7 @@ export default function ClimbRanksTiers({
                 </button>
                 <button
                   type="button"
-                  onClick={() => {
-                    sfx.playLevelUp();
-                    setSelectedTier(null);
-                    onOpenSignUp();
-                  }}
+                  disabled
                   className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-[#9ae600] hover:bg-[#aaff00] text-black text-xs font-extrabold uppercase tracking-wider shadow-lg shadow-[#9ae600]/25 flex items-center justify-center gap-2"
                 >
                   <span>Apply For {selectedTier.tag}</span>
@@ -667,11 +653,7 @@ export default function ClimbRanksTiers({
                 </button>
                 <button
                   type="button"
-                  onClick={() => {
-                    sfx.playLevelUp();
-                    setSelectedLiferCard(null);
-                    onOpenSignUp();
-                  }}
+                  disabled
                   className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-[#dfbf72] hover:bg-[#ebd59b] text-black text-xs font-extrabold uppercase tracking-wider shadow-lg shadow-[#dfbf72]/25 flex items-center justify-center gap-2"
                 >
                   <span>Apply For {selectedLiferCard.title}</span>

@@ -141,11 +141,6 @@ export default function FeatureSculptures({
   const [selectedSculpture, setSelectedSculpture] =
     useState<SculptureItem | null>(null);
 
-  const handleCardClick = (item: SculptureItem) => {
-    sfx.playClick();
-    setSelectedSculpture(item);
-  };
-
   return (
     <section
       id="features-sculptures"
@@ -185,7 +180,6 @@ export default function FeatureSculptures({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              onClick={() => handleCardClick(item)}
               onMouseEnter={() => sfx.playHover()}
               className={`group relative rounded-3xl bg-[#111412]/80 hover:bg-[#151a16] border border-neutral-800/90 hover:border-[#9ae600]/50 transition-all duration-300 p-6 sm:p-7 flex flex-col justify-between overflow-hidden cursor-pointer shadow-xl shadow-black/60 hover:shadow-2xl hover:shadow-[#9ae600]/10 hover:-translate-y-1 ${
                 index === 3 ? "md:col-span-2 lg:col-span-2" : ""
@@ -255,7 +249,6 @@ export default function FeatureSculptures({
               </div>
             </motion.div>
           );
-        })}
       </div>
 
       {/* Sculpture Detail Modal */}
@@ -349,11 +342,7 @@ export default function FeatureSculptures({
                 </button>
                 <button
                   type="button"
-                  onClick={() => {
-                    sfx.playLevelUp();
-                    setSelectedSculpture(null);
-                    onOpenSignUp();
-                  }}
+                  disabled
                   className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-[#9ae600] hover:bg-[#aaff00] text-black text-xs font-extrabold uppercase tracking-wider shadow-lg shadow-[#9ae600]/20 flex items-center justify-center gap-2"
                 >
                   <span>{selectedSculpture.ctaLabel}</span>

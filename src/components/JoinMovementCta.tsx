@@ -191,7 +191,7 @@ export default function JoinMovementCta({
           <button
             id="join-movement-signup-btn"
             type="button"
-            onClick={onOpenSignUp}
+            disabled
             className="
               min-w-[190px]
               px-8

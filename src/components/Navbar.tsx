@@ -75,24 +75,24 @@ export default function Navbar({
         <button
           id="nav-about-btn"
           type="button"
+          disabled
           className="inline-flex h-[38px] shrink-0 cursor-pointer items-center border-0 bg-transparent p-0 focus-visible:outline-2 focus-visible:outline-lime-300 max-[700px]:hidden"
-          onClick={onOpenAbout}
         >
           <span className={navTextClass}>ABOUT US</span>
         </button>
         <button
           id="nav-signin-btn"
           type="button"
+          disabled
           className="inline-flex h-[38px] min-w-[43px] shrink-0 cursor-pointer items-center justify-center whitespace-nowrap border-0 bg-transparent p-0 focus-visible:outline-2 focus-visible:outline-lime-300"
-          onClick={onOpenSignIn}
         >
           <span className={navTextClass}>SIGN IN</span>
         </button>
         <button
           id="nav-signup-btn"
           type="button"
+          disabled
           className="inline-flex h-[38px] w-[119px] shrink-0 flex-col items-center justify-center gap-[10px] rounded-[52px] bg-[#243b00] pl-[20px] font-sans text-[12px] font-semibold text-white"
-          onClick={onOpenSignUp}
         >
           <span className="flex h-full w-full items-center gap-[10px]">
             <span className="flex-1 whitespace-nowrap">SIGN UP</span>
