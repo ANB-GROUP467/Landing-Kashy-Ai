@@ -249,6 +249,7 @@ export default function FeatureSculptures({
               </div>
             </motion.div>
           );
+        })}
       </div>
 
       {/* Sculpture Detail Modal */}
