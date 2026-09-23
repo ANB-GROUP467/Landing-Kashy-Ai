@@ -314,7 +314,6 @@ export default function FeatureSculptures({
                 </div>
               </div>
 
-              {/* Perks List */}
               <div className="mt-6 pt-6 border-t border-neutral-800">
                 <h4 className="text-xs font-sans font-bold text-neutral-400 uppercase tracking-widest mb-3">
                   Included Protocol Advantages
