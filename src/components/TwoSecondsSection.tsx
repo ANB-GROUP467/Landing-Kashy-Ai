@@ -1,10 +1,8 @@
 "use client";
-
 import Image from "next/image";
 import { dmSans } from "../../app/fonts";
 
 const DESKTOP_ART = "https://kashy.ai/assets/twoSecounds-B3QA2fzU.png";
-
 const MOBILE_ART = "https://kashy.ai/assets/twoSecoundsMobile-BmURBc-7.png";
 
 export default function TwoSecondsSection() {
@@ -23,8 +21,6 @@ export default function TwoSecondsSection() {
         sm:min-h-256
         "
       >
-        {/* Desktop Artwork */}
-
         <Image
           src={DESKTOP_ART}
           alt=""
@@ -65,9 +61,6 @@ export default function TwoSecondsSection() {
           sm:hidden
           "
         />
-
-        {/* Text Content */}
-
         <div
           className="
           absolute
@@ -81,8 +74,6 @@ export default function TwoSecondsSection() {
           flex-col
           items-center
           text-center
-
-
           sm:right-auto
           sm:top-1/2
           sm:flex
@@ -91,8 +82,6 @@ export default function TwoSecondsSection() {
           sm:-translate-y-1/2
           sm:items-start
           sm:text-left
-
-
           min-[1440px]:left-195
           max-[1439px]:left-[calc(50%+5rem)]
           "
@@ -103,11 +92,9 @@ export default function TwoSecondsSection() {
             font-semibold
             not-italic
             text-[#2B2A2A]
-
             text-[40px]
             leading-[49.97px]
             tracking-[-0.055em]
-
             sm:text-[129px]
             sm:leading-28
             "
@@ -124,10 +111,8 @@ export default function TwoSecondsSection() {
             leading-[128%]
             tracking-[-0.01em]
             text-[#2B2A2A]
-
             text-xs
             max-w-50
-
             sm:max-w-none
             sm:text-[24px]
             sm:whitespace-nowrap

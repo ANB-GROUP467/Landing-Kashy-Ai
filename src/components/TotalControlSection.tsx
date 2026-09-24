@@ -75,13 +75,8 @@ export default function TotalControlSection() {
       aria-labelledby="total-control-heading"
       className="relative isolate overflow-hidden bg-black text-white"
     >
-      {/*
-        All cqw sizes follow this container's width, so the screen content
-        scales together with the laptop image.
-      */}
       <div className="relative mx-auto w-full max-w-[1920px] [container-type:inline-size]">
         <div className="relative aspect-[1920/1496] max-sm:aspect-[1920/1600]">
-          {/* Original laptop, floor and lighting */}
           <img
             src={laptopFrameImg.src}
             alt=""
@@ -90,7 +85,6 @@ export default function TotalControlSection() {
             className="pointer-events-none absolute left-[-1%] top-0 h-[98%] w-[102%] max-w-none select-none"
           />
 
-          {/* Heading */}
           <h2
             id="total-control-heading"
             className="absolute inset-x-0 top-[9.8%] m-0 px-[4cqw] text-center text-[3.65cqw] font-semibold leading-[1.15] tracking-[-0.1cqw]"
@@ -99,8 +93,6 @@ export default function TotalControlSection() {
               Total Control, Minus the Chaos.
             </span>
           </h2>
-
-          {/* Laptop screen: aligned to the existing image */}
           <div className="absolute left-[20.55%] top-[26.13%] h-[48.3%] w-[58.27%] overflow-hidden rounded-t-[0.65cqw] bg-[#151515] text-[#b8b8b8]">
             {/* Camera notch */}
             <div
@@ -287,8 +279,6 @@ export default function TotalControlSection() {
                 </div>
               </div>
             </div>
-
-            {/* Bottom composer */}
             <div className="absolute bottom-[2.3%] left-[26.1%] w-[47.8%]">
               <div className="mb-[0.35cqw] flex items-center justify-center gap-[0.22cqw]">
                 <Eye className="mr-[0.2cqw] h-[0.8cqw] w-[0.8cqw] text-[#a9df51]" />
@@ -339,7 +329,6 @@ export default function TotalControlSection() {
             </div>
           </div>
 
-          {/* Desktop feature cards */}
           <div className="absolute inset-x-[1.1%] top-[85.4%] grid grid-cols-4 gap-[1.05cqw] max-sm:hidden">
             {featureCards.map((card) => (
               <article
@@ -357,8 +346,6 @@ export default function TotalControlSection() {
             ))}
           </div>
         </div>
-
-        {/* Readable feature cards on mobile */}
         <div className="relative -mt-[6cqw] grid grid-cols-1 gap-3 px-4 pb-10 min-[420px]:grid-cols-2 sm:hidden">
           {featureCards.map((card) => (
             <article

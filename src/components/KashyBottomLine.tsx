@@ -1,5 +1,4 @@
 ﻿"use client";
-
 import { useState } from "react";
 import { Minus, Plus, TrendingUp } from "lucide-react";
 

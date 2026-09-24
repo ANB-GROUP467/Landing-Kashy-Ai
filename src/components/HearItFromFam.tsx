@@ -1,5 +1,10 @@
 import { useState } from "react";
 import { motion } from "motion/react";
+import marcusCardImg from "../assets/images/marcus-card.png";
+import marcusAvatarImg from "../assets/images/marcus-avatar.png";
+
+const marcusCardSrc = marcusCardImg.src;
+const marcusAvatarSrc = marcusAvatarImg.src;
 
 interface FamMember {
   id: string;
@@ -10,6 +15,8 @@ interface FamMember {
   earnings: string;
   quote: string;
   bg: string;
+  cardImage?: string;
+  collapsedCardImage?: string;
 }
 
 const famMembers: FamMember[] = [
@@ -17,8 +24,8 @@ const famMembers: FamMember[] = [
     id: "marcus",
     name: "Marcus T.",
     verticalName: "Marcus T.",
-    avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+    avatar: marcusAvatarSrc,
+    cardImage: marcusCardSrc,
     joined: "Joined: March 2025",
     earnings: "Earnings: $12K+ in referrals",
     quote:
@@ -60,8 +67,8 @@ const famMembers: FamMember[] = [
     id: "priya",
     name: "Priya Singh",
     verticalName: "Priya Singh",
-    avatar:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+    avatar: "/images/priya-reference-avatar.png",
+    collapsedCardImage: "/images/priya-card.png",
     joined: "Joined: January 2025",
     earnings: "Earnings: $18.5K+ in trades",
     quote:
@@ -89,8 +96,8 @@ const famMembers: FamMember[] = [
     id: "jordan",
     name: "Jordan Lee",
     verticalName: "Jordan Lee",
-    avatar:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
+    avatar: "/images/jordan-reference-avatar.png",
+    collapsedCardImage: "/images/jordan-card.png",
     joined: "Joined: February 2025",
     earnings: "Tier: OG Master ($22K Volume)",
     quote:
@@ -116,8 +123,8 @@ const famMembers: FamMember[] = [
     id: "sarah",
     name: "Sarah Chen",
     verticalName: "Sarah Chen",
-    avatar:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80",
+    avatar: "/images/sarah-reference-avatar.png",
+    collapsedCardImage: "/images/sarah-card.png",
     joined: "Joined: April 2025",
     earnings: "Earnings: $9.2K+ in staking",
     quote:
@@ -143,8 +150,8 @@ const famMembers: FamMember[] = [
     id: "devon",
     name: "Devon Williams",
     verticalName: "Devon Williams",
-    avatar:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80",
+    avatar: "/images/devon-reference-avatar.png",
+    collapsedCardImage: "/images/devon-card.png",
     joined: "Joined: November 2024",
     earnings: "Earnings: $34K+ in network",
     quote:
@@ -176,8 +183,8 @@ const famMembers: FamMember[] = [
     id: "alex",
     name: "Alex Rivera",
     verticalName: "Alex Rivera",
-    avatar:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80",
+    avatar: "/images/alex-reference-avatar.png",
+    collapsedCardImage: "/images/alex-card.png",
     joined: "Joined: May 2025",
     earnings: "Tier: Gold Champion",
     quote:
@@ -212,7 +219,6 @@ export default function HearItFromFam() {
         className="relative mx-auto flex w-[calc(100%_-_32px)] max-w-[1180px] flex-col gap-12 sm:w-[calc(100%_-_48px)] lg:gap-[74px]"
         style={{ containerType: "inline-size" }}
       >
-        {/* Header Block */}
         <div className="text-center">
           <h2
             className="font-display mx-auto max-w-[608px] bg-clip-text text-4xl font-extrabold tracking-tight text-transparent sm:text-6xl"
@@ -229,8 +235,6 @@ export default function HearItFromFam() {
             their lives and achieved new heights with KA$HY AI.
           </p>
         </div>
-
-        {/* Horizontal Testimonial Gallery */}
         <div
           className="
             flex min-h-0 flex-col items-stretch justify-center gap-[14px]
@@ -253,13 +257,10 @@ export default function HearItFromFam() {
                     : "h-[90px] min-h-0 lg:h-full lg:flex-[1_1_0%]"
                 }`}
               >
-                {/* Background gradient layer */}
                 <div
                   className="pointer-events-none absolute inset-0 z-0"
                   style={{ backgroundImage: member.bg }}
                 />
-
-                {/* Noise grain overlay */}
                 <div
                   aria-hidden="true"
                   className="pointer-events-none absolute inset-0 z-[1] opacity-[0.42] mix-blend-overlay"
@@ -270,24 +271,31 @@ export default function HearItFromFam() {
                     backgroundRepeat: "repeat",
                   }}
                 />
-
-                {/* Expanded Card Content View */}
                 {isExpanded ? (
-                  <div
-                    className="absolute inset-0 z-10 flex h-full w-full items-start rounded-[inherit]"
-                    style={{
-                      boxShadow:
-                        "inset 1px 1px 0 rgba(255,255,255,0.34), inset -1px -1px 0 rgba(255,255,255,0.035)",
-                    }}
-                  >
-                    {/* Vertical Author Name */}
-                    <div className="absolute top-[26px] left-6 shrink-0 text-base leading-[1.2] font-semibold tracking-normal text-[#e9e9df] normal-case [writing-mode:vertical-rl] lg:top-10 lg:left-[23px] min-[1200px]:top-[50px] min-[1200px]:left-7 min-[1200px]:text-lg">
-                      {member.name}
+                  member.cardImage ? (
+                    <div className="relative z-10 h-full w-full">
+                      <img
+                        src={member.cardImage}
+                        alt={`${member.name} story card`}
+                        className="h-full w-full rounded-[27px] object-cover"
+                      />
+                      <span className="sr-only">
+                        {member.name}: {member.quote} {member.joined} {member.earnings}
+                      </span>
                     </div>
+                  ) : (
+                    <div
+                      className="absolute inset-0 z-10 flex h-full w-full items-start rounded-[inherit]"
+                      style={{
+                        boxShadow:
+                          "inset 1px 1px 0 rgba(255,255,255,0.34), inset -1px -1px 0 rgba(255,255,255,0.035)",
+                      }}
+                    >
+                      <div className="absolute top-[26px] left-6 shrink-0 text-base leading-[1.2] font-semibold tracking-normal text-[#e9e9df] normal-case [writing-mode:vertical-rl] lg:top-10 lg:left-[23px] min-[1200px]:top-[50px] min-[1200px]:left-7 min-[1200px]:text-lg">
+                        {member.name}
+                      </div>
 
-                    {/* Quote + Footer */}
                     <div className="absolute right-6 bottom-6 left-6 flex min-w-0 flex-col justify-end lg:right-[23px] lg:bottom-[27px] lg:left-[23px] min-[1200px]:right-7 min-[1200px]:bottom-8 min-[1200px]:left-7">
-                      {/* Quote */}
                       <motion.div
                         initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -299,7 +307,6 @@ export default function HearItFromFam() {
                         </p>
                       </motion.div>
 
-                      {/* Avatar & Joined Details */}
                       <div className="flex items-center gap-[9px] text-[11px] text-[#e9e9df] italic min-[1200px]:text-[13px]">
                         <div className="h-[38px] w-[38px] shrink-0 overflow-hidden rounded-full">
                           <img
@@ -325,21 +332,27 @@ export default function HearItFromFam() {
                       </div>
                     </div>
                   </div>
-                ) : (
-                  /* Collapsed Card */
+                )
+              ) : (
+                <>
+                  {member.collapsedCardImage && (
+                    <img
+                      src={member.collapsedCardImage}
+                      alt={member.name}
+                      className="pointer-events-none absolute inset-0 z-10 hidden h-full w-full object-fill lg:block"
+                    />
+                  )}
                   <div
-                    className="absolute inset-0 z-10 flex h-full w-full items-center justify-between rounded-[inherit]"
+                    className={`absolute inset-0 z-10 flex h-full w-full items-center justify-between rounded-[inherit] ${member.collapsedCardImage ? "lg:hidden" : ""}`}
                     style={{
                       boxShadow:
                         "inset 1px 1px 0 rgba(255,255,255,0.34), inset -1px -1px 0 rgba(255,255,255,0.035)",
                     }}
                   >
-                    {/* Author Name */}
                     <div className="absolute top-[35px] left-6 text-base leading-[1.2] font-semibold tracking-normal text-[#e9e9df] normal-case [writing-mode:horizontal-tb] lg:top-10 lg:left-[25px] lg:[writing-mode:vertical-rl] min-[1200px]:top-[50px] min-[1200px]:left-[30px] min-[1200px]:text-lg">
                       {member.verticalName}
                     </div>
 
-                    {/* Bottom Avatar */}
                     <div className="absolute right-6 bottom-[26px] h-[38px] w-[38px] shrink-0 overflow-hidden rounded-full lg:right-auto lg:bottom-8 lg:left-[calc(50%_-_19px)]">
                       <img
                         src={member.avatar}
@@ -348,6 +361,7 @@ export default function HearItFromFam() {
                       />
                     </div>
                   </div>
+                </>
                 )}
               </motion.div>
             );

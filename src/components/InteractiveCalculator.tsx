@@ -1,11 +1,5 @@
 import { useState } from "react";
-import {
-  Calculator,
-  Sparkles,
-  TrendingUp,
-  ShieldCheck,
-  ArrowRight,
-} from "lucide-react";
+import { Calculator, Sparkles, ArrowRight } from "lucide-react";
 import { sfx } from "../utils/sound";
 
 interface InteractiveCalculatorProps {
@@ -19,7 +13,6 @@ export default function InteractiveCalculator({
   const [traderTier, setTraderTier] = useState<number>(2); // 1 = Novice, 2 = Cyber Pro, 3 = Apex Bunny
   const [includeStaking, setIncludeStaking] = useState<boolean>(true);
 
-  // Derived Calculations
   const tierMultipliers = [1.2, 2.0, 3.5];
   const tierNames = ["Novice Bunny", "Cyber Rabbit", "Apex Kashy"];
   const currentMultiplier = tierMultipliers[traderTier - 1];
@@ -35,11 +28,9 @@ export default function InteractiveCalculator({
 
   return (
     <div className="p-5 sm:p-7 rounded-3xl bg-[#111613] border border-neutral-800/90 shadow-xl flex flex-col justify-between h-full relative overflow-hidden group">
-      {/* Background soft glow */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-[#9ae600]/10 rounded-full blur-3xl pointer-events-none" />
 
       <div>
-        {/* Header */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2.5">
             <div className="p-2.5 rounded-xl bg-[#182216] border border-[#9ae600]/30 text-[#9ae600]">
@@ -59,7 +50,6 @@ export default function InteractiveCalculator({
           </span>
         </div>
 
-        {/* Volume Slider Control */}
         <div className="space-y-4 my-5">
           <div>
             <div className="flex justify-between items-center text-xs font-semibold mb-2">
@@ -89,7 +79,6 @@ export default function InteractiveCalculator({
             </div>
           </div>
 
-          {/* Tier Selector */}
           <div>
             <label className="block text-xs font-semibold text-neutral-300 mb-2">
               Select Kashy Trader Level:
@@ -122,7 +111,6 @@ export default function InteractiveCalculator({
             </div>
           </div>
 
-          {/* Staking Booster Checkbox */}
           <div className="flex items-center justify-between p-3 rounded-xl bg-neutral-900/70 border border-neutral-800">
             <div className="flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-[#9ae600]" />
@@ -154,7 +142,6 @@ export default function InteractiveCalculator({
           </div>
         </div>
 
-        {/* Calculated Results Grid */}
         <div className="grid grid-cols-2 gap-3 p-4 rounded-2xl bg-black/40 border border-neutral-800/80 mb-5">
           <div>
             <span className="text-[11px] text-neutral-400 block font-medium">
@@ -199,8 +186,6 @@ export default function InteractiveCalculator({
           </div>
         </div>
       </div>
-
-      {/* Action Footer */}
       <button
         type="button"
         disabled

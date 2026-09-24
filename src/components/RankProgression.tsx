@@ -1,17 +1,5 @@
 import { useState } from "react";
 import { motion } from "motion/react";
-import {
-  Trophy,
-  Crown,
-  Flame,
-  Sparkles,
-  ArrowRight,
-  Check,
-  Zap,
-  ShieldCheck,
-  ChevronRight,
-  TrendingUp,
-} from "lucide-react";
 import { sfx } from "../utils/sound";
 
 import podiumImg from "../assets/images/tier_podium_steps_1789984715925.jpg";
@@ -102,7 +90,6 @@ export default function RankProgression({
     }
     setUserLevel(calculatedLevel);
 
-    // Sync tab with user tier
     if (calculatedLevel >= 51) {
       setActiveTierTab(2);
     } else if (calculatedLevel >= 11) {

@@ -72,10 +72,8 @@ export default function CryptoBreakingNews() {
       id="crypto-news"
       className="relative bg-black text-white py-20 sm:py-28 overflow-hidden select-none border-b border-neutral-900"
     >
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-5 lg:px-6">
-        {/* Header Block Matching Frame 2147224912.png */}
+      <div className="relative mx-auto w-full px-5 max-[700px]:px-4">
         <div className="relative flex flex-col items-center text-center mb-12 sm:mb-16">
-          {/* Filter Toggle (Top / Latest) on Right */}
           <div className="sm:absolute sm:right-0 sm:top-2 mb-6 sm:mb-0">
             <div className="inline-flex items-center gap-2 p-1 rounded-full bg-[#111315] border border-neutral-800 shadow-sm text-xs font-semibold">
               <button
@@ -103,7 +101,6 @@ export default function CryptoBreakingNews() {
             </div>
           </div>
 
-          {/* Centered Heading with Periwinkle Tint */}
           <h2 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-[#8299f8] font-display">
             Crypto Breaking News
           </h2>
@@ -113,8 +110,7 @@ export default function CryptoBreakingNews() {
           </p>
         </div>
 
-        {/* Top 3 Visual News Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+        <div className="grid grid-cols-3 gap-4 max-[1200px]:grid-cols-2 max-[700px]:grid-cols-1">
           {mainNews.map((item, idx) => (
             <motion.div
               key={item.id}
@@ -122,9 +118,8 @@ export default function CryptoBreakingNews() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="rounded-[24px] bg-[#0c0e0f] text-white p-4 border border-neutral-800/80 shadow-xl flex flex-col gap-[10px] hover:border-neutral-700 transition-colors"
+              className="min-w-0 rounded-[24px] bg-[#0c0e0f] text-white p-4 border border-neutral-800/80 shadow-xl flex flex-col gap-[10px] hover:border-neutral-700 transition-colors max-[1200px]:last:col-span-full"
             >
-              {/* Top Action Bar */}
               <div className="flex items-center justify-between text-xs">
                 <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#181a1c] border border-neutral-700/60 text-neutral-300 hover:text-white transition-colors cursor-pointer text-[11px]">
                   <div
@@ -141,7 +136,6 @@ export default function CryptoBreakingNews() {
                 </span>
               </div>
 
-              {/* Cover Image */}
               <div className="relative rounded-xl overflow-hidden aspect-video bg-neutral-900">
                 <img
                   src={item.image}
@@ -150,12 +144,10 @@ export default function CryptoBreakingNews() {
                 />
               </div>
 
-              {/* Article Headline */}
               <h3 className="font-bold text-base sm:text-lg text-neutral-100 leading-snug line-clamp-2 hover:text-white transition-colors">
                 {item.title}
               </h3>
 
-              {/* Article Description with Read More */}
               <p className="text-xs text-neutral-400 leading-relaxed">
                 {item.desc}{" "}
                 <span className="text-[#9ae600] font-semibold cursor-pointer hover:underline">
@@ -166,8 +158,7 @@ export default function CryptoBreakingNews() {
           ))}
         </div>
 
-        {/* Bottom 3 Mini News Cards */}
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+        <div className="mt-4 grid grid-cols-3 gap-4 max-[1200px]:grid-cols-2 max-[700px]:grid-cols-1">
           {miniNews.map((item, idx) => (
             <motion.div
               key={item.id}
@@ -175,9 +166,8 @@ export default function CryptoBreakingNews() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 + idx * 0.08 }}
-              className="rounded-2xl bg-[#0c0e0f] text-white p-4 border border-neutral-800/80 shadow-md flex flex-col justify-between hover:border-neutral-700 transition-colors"
+              className="min-w-0 rounded-2xl bg-[#0c0e0f] text-white p-4 border border-neutral-800/80 shadow-md flex flex-col justify-between hover:border-neutral-700 transition-colors max-[1200px]:last:col-span-full"
             >
-              {/* Top Bar */}
               <div className="flex items-center justify-between mb-2.5 text-xs">
                 <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#181a1c] border border-neutral-700/60 text-neutral-300 text-[10px]">
                   <div
@@ -194,7 +184,6 @@ export default function CryptoBreakingNews() {
                 </span>
               </div>
 
-              {/* Text */}
               <p className="text-xs sm:text-[13px] font-semibold text-neutral-200 leading-snug line-clamp-2">
                 {item.text}
               </p>
@@ -202,7 +191,6 @@ export default function CryptoBreakingNews() {
           ))}
         </div>
 
-        {/* Center CTA Button Matching Frame 2147224912.png */}
         <div className="mt-8 sm:mt-10 flex justify-center">
           <button
             type="button"

@@ -526,11 +526,8 @@ export default function SmartestScreenerChat({
 .kashy-screener .screener-copy>div{margin-top:32px}
 }`}</style>
       <div className="screener-container relative z-10 mx-auto">
-        {/* 1. Interactive Chat Screener Window */}
         <div className="screener-card">
-          {/* Top Floating Prompt Pills */}
           <div className="screener-prompts flex flex-col items-center">
-            {/* Row 1: 1 Center Pill */}
             <div className="flex justify-center">
               <button
                 type="button"
@@ -547,8 +544,6 @@ export default function SmartestScreenerChat({
                 <span>{presetPrompts[0].text}</span>
               </button>
             </div>
-
-            {/* Row 2: 2 Pills */}
             <div className="flex flex-wrap justify-center gap-1.5">
               <button
                 type="button"
@@ -580,8 +575,6 @@ export default function SmartestScreenerChat({
                 <span>{presetPrompts[2].text}</span>
               </button>
             </div>
-
-            {/* Row 3: 3 Pills */}
             <div className="flex flex-wrap justify-center gap-1.5">
               <button
                 type="button"
@@ -629,8 +622,6 @@ export default function SmartestScreenerChat({
               </button>
             </div>
           </div>
-
-          {/* Active Conversation Stream (if any query executed) */}
           <AnimatePresence>
             {messages.length > 0 && (
               <motion.div
@@ -699,8 +690,6 @@ export default function SmartestScreenerChat({
               </motion.div>
             )}
           </AnimatePresence>
-
-          {/* Chat Input Card */}
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -717,9 +706,7 @@ export default function SmartestScreenerChat({
               className="w-full bg-transparent text-white text-sm sm:text-base placeholder-neutral-500 focus:outline-none pr-12 pb-8"
             />
 
-            {/* Bottom Row Actions Inside Input Box */}
             <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between">
-              {/* Left Utilities */}
               <div className="flex items-center gap-2 text-neutral-400">
                 <button
                   type="button"
@@ -746,7 +733,6 @@ export default function SmartestScreenerChat({
                 </button>
               </div>
 
-              {/* Right Send Circular Button */}
               <button
                 type="submit"
                 disabled={!inputValue.trim() || isThinking}
@@ -762,9 +748,7 @@ export default function SmartestScreenerChat({
             </div>
           </form>
 
-          {/* Quick Action Chips */}
           <div className="screener-actions mt-5 flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
-            {/* Green Eye Icon Button */}
             <button
               type="button"
               onClick={() => {
@@ -798,8 +782,6 @@ export default function SmartestScreenerChat({
             })}
           </div>
         </div>
-
-        {/* 2. "The Smartest Screener in the World" Heading & Paragraph & CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -807,21 +789,18 @@ export default function SmartestScreenerChat({
           transition={{ duration: 0.6, delay: 0.15 }}
           className="screener-copy text-center mx-auto"
         >
-          {/* Gradient Display Headline */}
           <h2 className="screener-heading text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.08] font-display">
             <span className="bg-gradient-to-r from-[#9ae600] via-[#a5b4fc] to-[#f472b6] bg-clip-text text-transparent">
               The Smartest Screener in the World
             </span>
           </h2>
 
-          {/* Subtitle Paragraph */}
           <p className="mt-5 text-sm sm:text-base md:text-lg text-neutral-400 font-normal leading-relaxed max-w-3xl mx-auto">
             You're no longer restricted by buttons or complex workflows. KA$HY
             AI's chatbot turns your thoughts into executed commands—whether it's
             payments, trades, or account management—without friction.
           </p>
 
-          {/* Start Screening CTA Button */}
           <div className="mt-8 sm:mt-10 flex justify-center">
             <button
               type="button"

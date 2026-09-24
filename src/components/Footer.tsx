@@ -96,10 +96,8 @@ export default function Footer({ onScrollToTop, onOpenAbout }: FooterProps) {
       id="footer"
       className="relative isolate w-full overflow-hidden bg-black font-sans text-white"
     >
-      {/* Footer content */}
       <div className="px-5 pb-12 pt-8 sm:px-8 lg:px-12 lg:pb-[48px] lg:pt-[30px]">
         <div className="grid grid-cols-2 gap-x-8 gap-y-12 lg:grid-cols-[46.7%_22%_31.3%] lg:gap-0">
-          {/* Statement and contact */}
           <div className="col-span-2 lg:col-span-1">
             <h2 className="m-0 max-w-[565px] font-sans text-[18px] font-black uppercase leading-[1.17] tracking-[-0.8px] sm:text-[22px] lg:text-[24px] lg:[-webkit-text-stroke:0.6px_white]">
               <span className="block">KA$HY AI HONORS THE DIVERSE</span>
@@ -129,7 +127,6 @@ export default function Footer({ onScrollToTop, onOpenAbout }: FooterProps) {
             </div>
           </div>
 
-          {/* Navigation */}
           <nav aria-label="Footer navigation">
             <h3 className="mb-[16px] bg-[linear-gradient(360deg,_#383A3C_-6.25%,_#F0EEE9_93.75%)] bg-clip-text text-[13px] font-semibold leading-[20px] text-transparent lg:text-[14px]">
               NAVIGATION
@@ -186,13 +183,13 @@ export default function Footer({ onScrollToTop, onOpenAbout }: FooterProps) {
       </div>
 
       <div className="flex items-center justify-between px-5 pb-8 text-[12px] leading-none text-[#9ca3af] sm:px-8 sm:text-[14px] lg:px-12">
-        <span>©2026 KA$HY AI Pvt Ltd</span>
+        <span>©2026 KA$HY AI PTY LTD</span>
         <button
           type="button"
           onClick={() => scrollToTop()}
           className="transition-colors hover:text-white"
         >
-          Legal Notice
+          LEGAL NOTICE
         </button>
         <time dateTime={currentTime?.toISOString()}>
           {currentTime

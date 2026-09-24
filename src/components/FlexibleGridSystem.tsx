@@ -4,14 +4,11 @@ import {
   Sparkles,
   ShieldCheck,
   Layers,
-  TrendingUp,
   LayoutGrid,
   Smartphone,
-  Flame,
   SlidersHorizontal,
   ChevronRight,
   Bot,
-  Zap,
   Globe,
 } from "lucide-react";
 import { sfx } from "../utils/sound";
@@ -46,7 +43,6 @@ export default function FlexibleGridSystem({
       aria-label="Flexible Grid System"
       className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24"
     >
-      {/* Section Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-6">
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#182615] border border-[#a3e635]/30 text-[#a3e635] text-xs font-sans font-semibold mb-3">
@@ -62,9 +58,7 @@ export default function FlexibleGridSystem({
           </p>
         </div>
 
-        {/* Grid System Controls: Layout Mode & Filtering */}
         <div className="flex flex-wrap items-center gap-3">
-          {/* Layout Mode Toggles */}
           <div className="flex items-center bg-neutral-900/90 border border-neutral-800 p-1 rounded-2xl">
             <button
               type="button"
@@ -120,7 +114,6 @@ export default function FlexibleGridSystem({
         </div>
       </div>
 
-      {/* Category Filter Pills */}
       <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-6 scrollbar-none">
         {categories.map((cat) => (
           <button
@@ -141,26 +134,20 @@ export default function FlexibleGridSystem({
         ))}
       </div>
 
-      {/* Dynamic Grid Layout Implementation */}
       {layoutMode === "bento" ? (
-        /* Bento Grid: Varied spans with responsive mobile-first flexibility */
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5 sm:gap-6">
-          {/* Card 1: Interactive Calculator (Wide 7 cols on desktop) */}
           <div className="lg:col-span-7">
             <InteractiveCalculator onOpenSignUp={onOpenSignUp} />
           </div>
 
-          {/* Card 2: Gamified Quests & Leaderboard (5 cols on desktop) */}
           <div className="lg:col-span-5">
             <LiveLeaderboard />
           </div>
 
-          {/* Card 3: Zero-Gas Settlement Simulator (5 cols on desktop) */}
           <div className="lg:col-span-5">
             <PaymentFlowSimulator />
           </div>
 
-          {/* Card 4: AI Neural Router Card (7 cols on desktop) */}
           <div className="lg:col-span-7 p-5 sm:p-7 rounded-3xl bg-[#111613] border border-neutral-800/90 shadow-xl flex flex-col justify-between relative overflow-hidden">
             <div>
               <div className="flex items-center justify-between mb-4">
@@ -182,7 +169,6 @@ export default function FlexibleGridSystem({
                 </span>
               </div>
 
-              {/* Dynamic Route Spread Chart / Visual */}
               <div className="p-4 rounded-2xl bg-black/40 border border-neutral-800/80 my-3">
                 <div className="flex justify-between items-center text-xs mb-3">
                   <span className="text-neutral-400">
@@ -193,7 +179,6 @@ export default function FlexibleGridSystem({
                   </span>
                 </div>
 
-                {/* Animated visual bars */}
                 <div className="space-y-2">
                   <div>
                     <div className="flex justify-between text-[11px] mb-1">
@@ -314,7 +299,6 @@ export default function FlexibleGridSystem({
             </div>
           </div>
 
-          {/* Card 6: Mobile First Ecosystem & SDK (4 cols) */}
           <div className="lg:col-span-4 p-5 sm:p-7 rounded-3xl bg-[#111613] border border-neutral-800/90 shadow-xl flex flex-col justify-between">
             <div>
               <div className="p-2.5 w-fit rounded-xl bg-[#182216] border border-[#9ae600]/30 text-[#9ae600] mb-3">
@@ -349,7 +333,6 @@ export default function FlexibleGridSystem({
             </div>
           </div>
 
-          {/* Card 7: Global Guild Network (4 cols) */}
           <div className="lg:col-span-4 p-5 sm:p-7 rounded-3xl bg-[#111613] border border-neutral-800/90 shadow-xl flex flex-col justify-between">
             <div>
               <div className="p-2.5 w-fit rounded-xl bg-[#182216] border border-[#9ae600]/30 text-[#9ae600] mb-3">
@@ -393,7 +376,6 @@ export default function FlexibleGridSystem({
           </div>
         </div>
       ) : layoutMode === "uniform" ? (
-        /* Uniform Grid: Strict 3-column responsive layout */
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <InteractiveCalculator onOpenSignUp={onOpenSignUp} />
           <LiveLeaderboard />
@@ -444,7 +426,6 @@ export default function FlexibleGridSystem({
           </div>
         </div>
       ) : (
-        /* Spotlight Mode: Focus on the interactive simulator & live flow with deep dive details */
         <div className="space-y-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <InteractiveCalculator onOpenSignUp={onOpenSignUp} />

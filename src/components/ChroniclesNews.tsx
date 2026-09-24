@@ -1,19 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import {
-  Sparkles,
-  ArrowRight,
-  Clock,
-  Calendar,
-  Tag,
-  X,
-  Share2,
-  Bookmark,
-  Check,
-  TrendingUp,
-  Cpu,
-  Shield,
-} from "lucide-react";
+import { Sparkles, ArrowRight, Clock, X, Share2, Check } from "lucide-react";
 import { sfx } from "../utils/sound";
 
 import newsVrImg from "../assets/images/crypto_news_vr_1789984687213.jpg";
@@ -123,7 +110,6 @@ export default function ChroniclesNews() {
       aria-label="Kashy Intelligence and News"
       className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28"
     >
-      {/* Section Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
         <div>
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#162013] border border-[#a3e635]/30 text-[#a3e635] text-xs font-sans font-semibold mb-3 tracking-wider uppercase">
@@ -139,7 +125,6 @@ export default function ChroniclesNews() {
           </p>
         </div>
 
-        {/* Filter Pills */}
         <div className="flex flex-wrap items-center gap-2 bg-[#121513] border border-neutral-800 p-1.5 rounded-2xl">
           {[
             { id: "all", label: "All Alpha" },
@@ -166,7 +151,6 @@ export default function ChroniclesNews() {
         </div>
       </div>
 
-      {/* 3-Column News Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {filteredArticles.map((article, idx) => (
           <motion.article
@@ -180,7 +164,6 @@ export default function ChroniclesNews() {
             className="group relative rounded-3xl bg-[#111412]/80 hover:bg-[#151a15] border border-neutral-800/90 hover:border-[#9ae600]/60 transition-all duration-300 p-5 sm:p-6 flex flex-col justify-between overflow-hidden cursor-pointer shadow-xl shadow-black/50 hover:shadow-2xl hover:shadow-[#9ae600]/10 hover:-translate-y-1"
           >
             <div>
-              {/* Image Preview with Category Badge */}
               <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden bg-black mb-5 border border-neutral-800 group-hover:border-neutral-700 transition-colors">
                 <img
                   src={article.image}
@@ -190,19 +173,16 @@ export default function ChroniclesNews() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
 
-                {/* Category Pill Over Image */}
                 <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-neutral-700/80 text-[10px] font-sans font-bold text-[#a3e635] tracking-wider uppercase">
                   {article.categoryLabel}
                 </div>
 
-                {/* Read time pill */}
                 <div className="absolute bottom-3 right-3 px-2.5 py-0.5 rounded-full bg-black/80 backdrop-blur-md text-[10px] font-sans text-neutral-300 flex items-center gap-1">
                   <Clock className="w-3 h-3 text-neutral-400" />
                   <span>{article.readTime}</span>
                 </div>
               </div>
 
-              {/* Date & Tag meta */}
               <div className="flex items-center justify-between text-[11px] font-sans text-neutral-400 mb-2">
                 <span>{article.date}</span>
                 <span className="text-[#a3e635] font-semibold">
@@ -210,18 +190,15 @@ export default function ChroniclesNews() {
                 </span>
               </div>
 
-              {/* Title */}
               <h3 className="text-xl font-bold text-white tracking-tight font-display line-clamp-2 mb-2 group-hover:text-[#a3e635] transition-colors">
                 {article.title}
               </h3>
 
-              {/* Summary */}
               <p className="text-xs sm:text-sm text-neutral-400 line-clamp-3 leading-relaxed">
                 {article.summary}
               </p>
             </div>
 
-            {/* Card Footer */}
             <div className="mt-6 pt-4 border-t border-neutral-800/80 flex items-center justify-between text-xs font-semibold text-neutral-300 group-hover:text-white">
               <span className="text-neutral-400 font-sans text-[11px]">
                 {article.views} reads
@@ -235,7 +212,6 @@ export default function ChroniclesNews() {
         ))}
       </div>
 
-      {/* Full Article Modal */}
       <AnimatePresence>
         {selectedArticle && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
@@ -245,7 +221,6 @@ export default function ChroniclesNews() {
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               className="relative w-full max-w-3xl rounded-3xl bg-[#121513] border border-neutral-700/80 p-6 sm:p-8 shadow-2xl shadow-black overflow-hidden max-h-[90vh] overflow-y-auto"
             >
-              {/* Top Controls */}
               <div className="flex items-center justify-between mb-6">
                 <span className="px-3 py-1 rounded-full text-xs font-sans font-bold bg-[#182615] border border-[#a3e635]/30 text-[#a3e635] uppercase">
                   {selectedArticle.categoryLabel}
@@ -281,7 +256,6 @@ export default function ChroniclesNews() {
                 </div>
               </div>
 
-              {/* Cover Image */}
               <div className="w-full aspect-[21/9] rounded-2xl overflow-hidden bg-black mb-6 border border-neutral-800">
                 <img
                   src={selectedArticle.image}
@@ -290,8 +264,6 @@ export default function ChroniclesNews() {
                   className="w-full h-full object-cover object-center"
                 />
               </div>
-
-              {/* Meta */}
               <div className="flex items-center gap-4 text-xs font-sans text-neutral-400 mb-3">
                 <span>{selectedArticle.date}</span>
                 <span>•</span>
@@ -300,19 +272,16 @@ export default function ChroniclesNews() {
                 <span className="text-[#a3e635]">{selectedArticle.tag}</span>
               </div>
 
-              {/* Title */}
               <h2 className="text-2xl sm:text-3xl font-black text-white font-display leading-tight mb-6">
                 {selectedArticle.title}
               </h2>
 
-              {/* Body paragraphs */}
               <div className="space-y-4 text-sm sm:text-base text-neutral-300 leading-relaxed">
                 {selectedArticle.fullContent.map((paragraph, pIdx) => (
                   <p key={pIdx}>{paragraph}</p>
                 ))}
               </div>
 
-              {/* Footer CTA */}
               <div className="mt-8 pt-6 border-t border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div className="text-xs text-neutral-400 font-sans">
                   Verified by Kashy Research Labs

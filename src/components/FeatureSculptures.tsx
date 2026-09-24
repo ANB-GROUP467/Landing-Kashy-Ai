@@ -1,18 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import {
-  Sparkles,
-  ArrowRight,
-  X,
-  Shield,
-  Zap,
-  Flame,
-  Crown,
-  CheckCircle2,
-} from "lucide-react";
+import { Sparkles, ArrowRight, X, CheckCircle2 } from "lucide-react";
 import { sfx } from "../utils/sound";
 
-// 3D Sculpture Assets
 import silverCoinImg from "../assets/images/silver_coin_spotlight_1789984593674.jpg";
 import emeraldTwoImg from "../assets/images/emerald_number_two_1789984608987.jpg";
 import chromeFistImg from "../assets/images/chrome_fist_sculpture_1789984660699.jpg";
@@ -147,10 +137,8 @@ export default function FeatureSculptures({
       aria-label="Features and Perks"
       className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28"
     >
-      {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] max-w-5xl h-[400px] bg-[#9ae600]/5 blur-[160px] pointer-events-none rounded-full" />
 
-      {/* Section Header */}
       <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#162013] border border-[#a3e635]/30 text-[#a3e635] text-xs font-sans font-semibold mb-4 tracking-wider uppercase">
           <Sparkles className="w-3.5 h-3.5 text-[#a3e635]" />
@@ -168,10 +156,8 @@ export default function FeatureSculptures({
         </p>
       </div>
 
-      {/* 5-Card High-Craft Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {sculptures.map((item, index) => {
-          // Make the first two cards span or have prominent presentation
           const isHighlight = index === 0 || index === 3;
           return (
             <motion.div
@@ -185,11 +171,9 @@ export default function FeatureSculptures({
                 index === 3 ? "md:col-span-2 lg:col-span-2" : ""
               }`}
             >
-              {/* Top rim highlight */}
               <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-white/15 to-transparent group-hover:via-[#9ae600]/40 transition-colors" />
 
               <div>
-                {/* Header & Badges */}
                 <div className="flex items-center justify-between gap-3 mb-5">
                   <span
                     className={`px-2.5 py-1 rounded-full text-[11px] font-sans font-bold tracking-wider uppercase border ${item.badgeColor}`}
@@ -207,7 +191,6 @@ export default function FeatureSculptures({
                   </div>
                 </div>
 
-                {/* 3D Sculpture Image Display */}
                 <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-black/80 border border-neutral-800/80 mb-6 group-hover:border-neutral-700 transition-colors">
                   <img
                     src={item.image}
@@ -215,17 +198,14 @@ export default function FeatureSculptures({
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
                   />
-                  {/* Subtle vignette */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
 
-                  {/* Hover Inspect Pill */}
                   <div className="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-neutral-700/80 text-[11px] font-semibold text-neutral-200 flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
                     <span>Inspect</span>
                     <ArrowRight className="w-3 h-3 text-[#9ae600]" />
                   </div>
                 </div>
 
-                {/* Titles */}
                 <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight font-display mb-1 group-hover:text-[#a3e635] transition-colors">
                   {item.title}
                 </h3>
@@ -237,7 +217,6 @@ export default function FeatureSculptures({
                 </p>
               </div>
 
-              {/* Card Footer */}
               <div className="mt-6 pt-4 border-t border-neutral-800/80 flex items-center justify-between text-xs font-semibold text-neutral-300 group-hover:text-white">
                 <span className="flex items-center gap-1.5 text-[#a3e635]">
                   <Sparkles className="w-3.5 h-3.5" />
@@ -251,8 +230,6 @@ export default function FeatureSculptures({
           );
         })}
       </div>
-
-      {/* Sculpture Detail Modal */}
       <AnimatePresence>
         {selectedSculpture && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
@@ -273,8 +250,6 @@ export default function FeatureSculptures({
               >
                 <X className="w-5 h-5" />
               </button>
-
-              {/* Modal Content */}
               <div className="flex flex-col sm:flex-row gap-6 items-start">
                 <div className="w-full sm:w-1/2 aspect-square rounded-2xl overflow-hidden bg-black border border-neutral-700/80 shrink-0">
                   <img
@@ -313,7 +288,6 @@ export default function FeatureSculptures({
                   </p>
                 </div>
               </div>
-
               <div className="mt-6 pt-6 border-t border-neutral-800">
                 <h4 className="text-xs font-sans font-bold text-neutral-400 uppercase tracking-widest mb-3">
                   Included Protocol Advantages
@@ -331,7 +305,6 @@ export default function FeatureSculptures({
                 </div>
               </div>
 
-              {/* Actions */}
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-end gap-3">
                 <button
                   type="button"
