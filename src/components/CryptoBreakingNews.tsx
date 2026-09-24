@@ -81,7 +81,7 @@ export default function CryptoBreakingNews() {
                 onClick={() => setFilter("top")}
                 className={`px-4 py-1.5 rounded-full transition-colors ${
                   filter === "top"
-                    ? "bg-neutral-100 text-black shadow"
+                    ? "bg-black text-white shadow"
                     : "text-neutral-400 hover:text-neutral-200"
                 }`}
               >
@@ -92,7 +92,7 @@ export default function CryptoBreakingNews() {
                 onClick={() => setFilter("latest")}
                 className={`px-4 py-1.5 rounded-full transition-colors ${
                   filter === "latest"
-                    ? "bg-neutral-100 text-black shadow"
+                    ? "bg-black text-white shadow"
                     : "text-neutral-400 hover:text-neutral-200"
                 }`}
               >
